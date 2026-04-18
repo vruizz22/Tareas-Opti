@@ -9,6 +9,7 @@ reporta la solucion optima (o informa infactibilidad).
 
 import csv
 import sys
+import os
 
 import gurobipy as gp
 from gurobipy import GRB
@@ -68,8 +69,12 @@ def leer_costos_demanda(ruta: str, origenes: list):
 
 def main():
     # ---------- Lectura de datos ----------
-    origenes, s, F = leer_oferta("oferta.csv")
-    destinos, c, d = leer_costos_demanda("costos_demanda.csv", origenes)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    data_dir = os.path.join(base_dir, "data")
+
+    origenes, s, F = leer_oferta(os.path.join(data_dir, "oferta.csv"))
+    destinos, c, d = leer_costos_demanda(
+        os.path.join(data_dir, "costos_demanda.csv"), origenes)
 
     # ---------- Modelo ----------
     modelo = gp.Model("Localizacion_Transporte")
