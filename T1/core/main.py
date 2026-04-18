@@ -125,7 +125,7 @@ def main() -> None:
         print("Bodegas arrendadas:")
         for i in origenes:
             if y[i].X > 0.5:
-                print(f"Se decidió arrendar la bodega {i}")
+                print(f"Se decidio arrendar la bodega {i}")
 
         print("Envios realizados:")
         for i in origenes:
