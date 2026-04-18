@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[T1]{fontenc}
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage[spanish]{babel}
@@ -352,7 +353,7 @@ es \'optimo y el valor \'optimo sigue siendo $z^*=6$. Equivalentemente, el conju
 
 El archivo \texttt{main.py} (adjunto) lee los archivos \texttt{oferta.csv} y \texttt{costos\_demanda.csv} desde la carpeta de ejecuci\'on y resuelve el modelo anterior. El c\'odigo no asume la cantidad de bodegas ni de clientes, detectando ambos desde los encabezados y filas de los archivos. Detecta infactibilidad usando el estado \texttt{GRB.INFEASIBLE} (y \texttt{GRB.INF\_OR\_UNBD}). A continuaci\'on se adjunta el c\'odigo.
 
-\lstinputlisting[language=Python,caption={Contenido de \texttt{main.py}}]{main.py}
+\lstinputlisting[language=Python,caption={Contenido de \texttt{main.py}}]{../core/main.py}
 
 \subsubsection*{Ejecuci\'on sobre la instancia de ejemplo}
 
